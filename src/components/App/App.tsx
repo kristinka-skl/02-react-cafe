@@ -12,11 +12,11 @@ export default function App() {
     neutral: 0,
     bad: 0,
   });
-  const handleVote = (key: VoteType) => {
-    setVotes({
-      ...votes,
-      [key]: votes[key] + 1,
-    });
+  const handleVote = (type: VoteType) => {
+    setVotes((prev) => ({
+      ...prev,
+      [type]: prev[type] + 1,
+    }));
   };
   const resetVotes = () => {
     setVotes({
